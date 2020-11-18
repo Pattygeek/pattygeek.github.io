@@ -1,7 +1,7 @@
 let theme = localStorage.getItem("theme");
 
 if (theme === null) {
-  setTheme('light');
+  setTheme("light");
 } else {
   setTheme(theme);
 }
@@ -29,5 +29,13 @@ function setTheme(mode) {
   if (mode == "purple") {
     document.getElementById("theme-style").href = "purple.css";
   }
-  localStorage.setItem('theme',mode);
+  localStorage.setItem("theme", mode);
+}
+
+function handleSubmit() {
+  var form = document.getElementById("contact-form");
+  form.onsubmit = function (e) {
+    e.preventDefault();
+    alert("submitted");
+  };
 }
