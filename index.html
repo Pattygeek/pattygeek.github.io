@@ -10,6 +10,17 @@
     />
     <link rel="stylesheet" href="index.css" type="text/css" />
     <link id="theme-style" rel="stylesheet" href="" type="text/css" />
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        // https://dashboard.emailjs.com/admin/integration
+        emailjs.init("user_rJijt31D7ewU5dP0S80K6");
+      })();
+    </script>
   </head>
   <body>
     <section class="first-section">
@@ -109,7 +120,7 @@
                 <li>Recoil</li>
                 <li>ContextAPI</li>
                 <li>Material Design</li>
-                <li>SASS</li>
+                <li>Sass</li>
               </ul>
             </div>
           </div>
@@ -183,16 +194,16 @@
         <h3 style="text-align: center; margin-top: 0rem; padding-top: 2rem">
           Get in touch
         </h3>
-        <form id="contact-form" onsubmit="handleSubmit()">
+        <form id="contact-form">
           <label>Name</label>
-          <input class="input-field" type="text" name="name" required />
+          <input class="input-field" type="text" name="user_name" required />
 
           <label>Email</label>
-          <input class="input-field" type="text" name="email" required />
+          <input class="input-field" type="text" name="user_email" required />
 
-          <label>Subject</label>
-          <input class="input-field" type="text" name="subject" />
-
+          <label>Phone number</label>
+          <input class="input-field" type="text" name="user_number" />
+          <input type="hidden" name="contact_number" />
           <label>Message</label>
           <textarea
             class="input-field"

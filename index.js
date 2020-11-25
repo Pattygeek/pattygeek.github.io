@@ -32,10 +32,28 @@ function setTheme(mode) {
   localStorage.setItem("theme", mode);
 }
 
+// function handleSubmit(e) {
+//   alert("submitted");
+//   e.stopPropagation();
+// }
+
 function handleSubmit() {
-  var form = document.getElementById("contact-form");
-  form.onsubmit = function (e) {
-    e.preventDefault();
-    alert("submitted");
+  window.onload = function () {
+    document
+      .getElementById("contact-form")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+        // generate a five digit number for the contact_number variable
+        this.contact_number.value = (Math.random() * 100000) | 0;
+        // these IDs from the previous steps
+        emailjs.sendForm("contact_service", "contact_form", this).then(
+          function () {
+            console.log("SUCCESS!");
+          },
+          function (error) {
+            console.log("FAILED...", error);
+          }
+        );
+      });
   };
 }
