@@ -37,7 +37,7 @@ function setTheme(mode) {
 //   e.stopPropagation();
 // }
 
-function handleSubmit() {
+
   window.onload = function () {
     document
       .getElementById("contact-form")
@@ -57,4 +57,4 @@ function handleSubmit() {
         );
       });
   };
-}
+
