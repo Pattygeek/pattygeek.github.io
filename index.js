@@ -48,9 +48,10 @@ function handleSubmit() {
         // these IDs from the previous steps
         emailjs.sendForm("contact_service", "contact_form", this).then(
           function () {
-            console.log("SUCCESS!");
+            alert("Message sent successfully! Thank you for reaching out");
           },
           function (error) {
+            alert("Sending failed. Please try again")
             console.log("FAILED...", error);
           }
         );
