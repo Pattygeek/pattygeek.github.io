@@ -37,24 +37,23 @@ function setTheme(mode) {
 //   e.stopPropagation();
 // }
 
-
-  window.onload = function () {
-    document
-      .getElementById("contact-form")
-      .addEventListener("submit", function (event) {
-        event.preventDefault();
-        // generate a five digit number for the contact_number variable
-        this.contact_number.value = (Math.random() * 100000) | 0;
-        // these IDs from the previous steps
-        emailjs.sendForm("contact_service", "contact_form", this).then(
-          function () {
-            alert("Message sent successfully! Thank you for reaching out");
-          },
-          function (error) {
-            alert("Sending failed. Please try again")
-            console.log("FAILED...", error);
-          }
-        );
-      });
-  };
-
+// window.onload = function () {
+//   document
+//     .getElementById("contact-form")
+//     .addEventListener("submit", function (event) {
+//       event.preventDefault();
+//       // generate a five digit number for the contact_number variable
+//       this.contact_number.value = (Math.random() * 100000) | 0;
+//       // these IDs from the previous steps
+//       emailjs.sendForm("service_80kazz4", "template_p9n1zrs", "contact-form", this).then(
+//         function () {
+//           alert("Message sent successfully! Thank you for reaching out");
+//           document.getElementById("contact-form").reset();
+//         },
+//         function (error) {
+//           alert("Sending failed. Please try again");
+//           console.log("FAILED...", error);
+//         }
+//       );
+//     });
+// };

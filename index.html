@@ -21,6 +21,37 @@
         emailjs.init("user_rJijt31D7ewU5dP0S80K6");
       })();
     </script>
+    <script type="text/javascript">
+      window.onload = function () {
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            // generate a five digit number for the contact_number variable
+            this.contact_number.value = (Math.random() * 100000) | 0;
+            // these IDs from the previous steps
+            emailjs
+              .sendForm(
+                "service_80kazz4",
+                "template_p9n1zrs",
+                "user_rJijt31D7ewU5dP0S80K6",
+                this
+              )
+              .then(
+                function () {
+                  alert(
+                    "Message sent successfully! Thank you for reaching out."
+                  );
+                  document.getElementById("contact-form").reset();
+                },
+                function (error) {
+                  alert("Sending failed. Please try again");
+                  console.log("FAILED...", error);
+                }
+              );
+          });
+      };
+    </script>
   </head>
   <body>
     <section class="first-section">
@@ -72,8 +103,9 @@
 
                 <h3>What I Do</h3>
                 <p>
-                  I am 10x frontend developer who likes to build great products.
-                  to build great products. to build great products.
+                  I am frontend developer who is highly curious and empathic. I
+                  build highly responsive products with a keen interest in user
+                  accessibility.
                 </p>
 
                 <div id="corner-br" class="corner"></div>
@@ -90,12 +122,12 @@
           <div class="about-me">
             <h4>More about me</h4>
             <p>
-              I build projects because i really enjoy building them and I write
-              because I really enjoy writing
+              I have a knack for building great user interfaces and occasionally
+              I write technical articles to document my journey.
             </p>
             <p>
-              I am an active learner, always learning and growing cos that how
-              you stay relevant.
+              I am an active learner, always seeking opportunities to learn and
+              grow to stay updated with trends in the software industry.
             </p>
 
             <hr />
@@ -212,7 +244,7 @@
             required
           ></textarea>
 
-          <input type="submit" value="Send" id="submit-btn" />
+          <input type="submit" value="send" id="submit-btn" />
         </form>
       </div>
     </section>
